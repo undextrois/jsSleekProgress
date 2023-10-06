@@ -1,0 +1,48 @@
+<html>
+<head>
+<!-- Include the necessary CSS and JavaScript files -->
+<link rel="stylesheet" href="progress-bar.css">
+<script src="progress-bar.js"></script>
+</head>
+<body>   
+<!-- Your contact form HTML -->
+<form id="contactForm">
+  <!-- Your form fields go here -->
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+<!-- Initialize the progress bar and notification system -->
+<script>
+  // Initialize progress bar
+  const progressBar = new ProgressBar();
+
+  // Function to simulate form submission
+  function submitForm() {
+    // Show the progress bar
+    progressBar.show();
+
+    // Simulate an asynchronous request (replace this with your actual form submission logic)
+    setTimeout(() => {
+      // Assume the request was successful (you can handle errors as needed)
+      progressBar.hide();
+      showNotification('success', 'Form submitted successfully!');
+    }, 2000);
+  }
+
+  // Function to show notifications
+  function showNotification(type, message) {
+    // Create notification
+    const notification = new Notification(type, message);
+
+    // Show notification
+    notification.show();
+  }
+</script>
+    </body> 
+</html>
